@@ -8,7 +8,7 @@ node {
    } 
 
    stage ('Run image') {
-      docker.image('alpine').withRun('-p 80:80') {   c->
+      docker.image('alpine'){   c->
       sh 'docker ls'
      
     } 
