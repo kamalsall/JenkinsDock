@@ -4,13 +4,13 @@ node {
         checkout scm
      } 
    stage ('Build image') {
-     app= docker.build ("Alpine")
+     app= docker.build ("alpine")
    } 
 
    stage ('Run image') {
-      docker.image('Alpine').withRun('-p 80:80') {   c->
-      sh 'docker build'
-     sh 'curl localhost'
+      docker.image('alpine').withRun('-p 80:80') {   c->
+      sh 'docker ls'
+     
     } 
   }
 }
